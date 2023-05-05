@@ -10,20 +10,25 @@ def convert(sentence):
     print(sentence)
     for word in sentence:
         new_word = []
-        for index,letter in enumerate(word):
+        for index in range(len(word)):
+            print(word[index])
             if index < len(word)-3:
                 if word[index] in consonant and word[index+1] in vocal and word[index+2] in consonant and word[index+3] in consonant:
                     new_word.append(word[index:index+3])
+                    print(new_word)
                 elif word[index] in consonant and word[index+1] in vocal:
                     new_word.append(word[index:index+2])
+                    print(new_word)
             elif index+3 == len(word):
                 if word[index] in consonant and word[index+1] in vocal and word[index+2] in consonant:
                     new_word.append(word[index:index+3])
+                    print(new_word)
             elif index < len(word)-1:
                 if word[index] in consonant and word[index+1] in vocal:
                     new_word.append(word[index:index+2])
+                    print(new_word)
         print(new_word)
     return sentence
 
-text = 'halo, nama saya rifqy, saya suka makan ayam'
+text = 'halo, nama saya rifqy, saya suka makan opor ayam mantap pakai kompor listrik'
 convert(text)
